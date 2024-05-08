@@ -14,7 +14,7 @@
 * in flow control, loops, and collections. By mastering these concepts, developers will be able to write more
 * efficient and effective code in their Salesforce projects.
 *
-* @author Your Name
+* @author Michael Kent
 */
 
 public with sharing class FlowControlLoopsCollections {
@@ -29,7 +29,11 @@ public with sharing class FlowControlLoopsCollections {
      * @return "Hello World!" if x greater than y, otherwise return null.
      */
     public static String helloWorld(Integer x, Integer y) {
-        return null; // Replace null with the variable you used to store the result
+        if (x > y) {
+            return 'Hello World!';
+        } else {
+            return null;
+        }
     }
 
     /**
@@ -42,7 +46,9 @@ public with sharing class FlowControlLoopsCollections {
      * @return true if the person is eligible to vote, false otherwise.
      */
     public static Boolean votingEligibility(Integer age) {
-        return null; // Replace null with the variable you used to store the result
+        if(age >= 18){
+            return true;
+        }else return false;
     }
 
     /**
@@ -57,8 +63,11 @@ public with sharing class FlowControlLoopsCollections {
     public static Integer findMax(Integer num1, Integer num2) {
         // Initialize largestNum as null
         Integer largestNum = null;
-
-        return null; // Replace null with the variable you used to store the result
+        if (num1 == num2 || num1 > num2) {
+            return largestNum = num1;
+        } else if (num1 < num2) {
+            return largestNum = num2;
+        } else return largestNum;
     }
 
 
@@ -71,7 +80,13 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the number is "Positive", "Negative", or "Zero", or null if the number is null.
      */
     public static String checkNumber(Integer a) {
-        return null; // Replace null with the variable you used to store the result
+        String numberType;
+        if (a == 0) {
+            return numberType = 'Zero';
+        } else if (a > 0) {
+            return numberType = 'Positive';
+        } else return numberType = 'Negative';
+     
     }
 
     /**
