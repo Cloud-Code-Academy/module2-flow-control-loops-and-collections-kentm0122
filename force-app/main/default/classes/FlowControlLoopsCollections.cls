@@ -85,7 +85,9 @@ public with sharing class FlowControlLoopsCollections {
             return numberType = 'Zero';
         } else if (a > 0) {
             return numberType = 'Positive';
-        } else return numberType = 'Negative';
+        } else if (a < 0) {
+            return numberType = 'Negative';
+        } else return null;
      
     }
 
@@ -98,7 +100,14 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the number is "Even" or "Odd", or null if the number is null.
      */
     public static String checkEvenOdd(Integer a) {
-        return null; // Replace null with the variable you used to store the result
+        if (a== null) {
+            return null;
+        }else {
+            Integer remainder = Math.mod(a,2);
+         if (remainder== 0) {
+            return 'Even';
+        } else return 'Odd';
+      }
     }
 
     /**
@@ -109,9 +118,16 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the input is "Empty", "Null", or "Contains Text".
      */
     public static String checkString(String a) {
-        return null; // Replace null with the variable you used to store the result
+        if (a == null) {
+            return 'Null';
+        } else if (a == '') {
+            return 'Empty';
+        } else {
+            return 'Contains Text';
+        }
     }
-
+    
+    
     /**
      * Question 7
      * Determines the grade based on the score.
@@ -125,7 +141,16 @@ public with sharing class FlowControlLoopsCollections {
      * @return The grade for the given score.
      */
     public static String determineGrade(Integer score) {
-        return null; // Replace null with the variable you used to store the result
+        if(score >= 90){
+            return 'A';
+        } else if(score >= 80){
+            return 'B';
+        } else if(score >= 70){
+            return 'C';
+        } else if(score >= 60){
+            return 'D';
+        } else return 'F';    
+        
     }
 
 
@@ -137,13 +162,11 @@ public with sharing class FlowControlLoopsCollections {
      * @return The sum of all integers up to the limit.
      */
     public static Integer sumUpToLimit(Integer intLimit) {
-        /* 
-         for (){
-            
+        Integer sum = 0;
+         for (Integer i = 1; i <=intLimit; i++) {
+            sum += i;
          }
-        */
-
-        return null; // Replace null with the variable you used to store the result
+        return sum; 
     }
 
     /**
