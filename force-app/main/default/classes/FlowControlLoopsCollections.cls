@@ -200,7 +200,7 @@ public with sharing class FlowControlLoopsCollections {
     public static String repeatString(String inputString, Integer repeatCount) {
         // Initialize the result String
          String result;
-         String colon = '; ';
+         Final String colon = '; ';
         // Use a for loop to append the inputString to the result string repeatCount times
         
         for (Integer i = 0; i < repeatCount; i++) {
@@ -266,14 +266,15 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static List<Integer> createIntegerList(Integer n) {
         // Create a new list of integers 
-
-        /*
-        for() {
+    List<Integer> integerList = new List<Integer>();
+        
+        for(Integer i = 0; i < n;i++) {
             //add integer to the list
+        integerList.add(i+1);
         }
-        */ 
+        
 
-        return null; // Replace null with the variable you used to store the result
+        return integerList; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -289,8 +290,8 @@ public with sharing class FlowControlLoopsCollections {
         Set<String> stringSet = new Set<String>();
 
         //add strings to the set
-
-        return null; // Replace null with the variable you used to store the result
+        stringSet.addAll(inputList);
+        return stringSet; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -301,12 +302,17 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static Integer sumPositiveIntegers() {
         List<Integer> numbers = new List<Integer>{-1, 2, -3, 4, -5, 6}; //DO NOT CHANGE
-
+        Integer sum = 0;
         // Loop through the list of integers
+        for (Integer currentNum : numbers) {
+            if (currentNum > 0) {
+                sum += currentNum;
+            }
+        }
             // if the number is negative skip this iteration
         
 
-        return null; // Replace null with the variable you used to store the result
+        return sum; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -319,11 +325,21 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static Integer findWordInList(String wordToFind, List<String> words) {
         // The variable to store the index of the word
+        Integer wordIndex = -1;
+        
+        
 
         // Loop through the list of words
+        for(String currentWord : words){
+            if (currentWord == wordToFind) {
+                wordIndex = words.indexOf(wordToFind);
+                break;
+            }
+            
+        }
             // If the current word is the word to find, exit the loop
-
-        return null; // Replace null with the variable you used to store the result
+           return wordIndex;
+    
     }
 
     /**
@@ -335,9 +351,14 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static Decimal countMoney() {
         // The list of money in the wallet, represented in dollars and cents
+        Decimal totalCash = 0;
         List<Decimal> moneyInWallet = new List<Decimal>{0.50, 10, 3.84, 24.60, 9.08, 50, 4.90}; //DO NOT CHANGE
-
-        return null; // Replace null with the variable you used to store the result
+        for (Decimal currentCash : moneyInWallet) {
+            if (totalCash > 40) {
+                break;
+            }else totalCash += currentCash;
+        }
+        return totalCash; // Replace null with the variable you used to store the result
     }
 
     /**
