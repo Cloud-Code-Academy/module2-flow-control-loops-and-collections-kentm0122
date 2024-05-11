@@ -48,7 +48,9 @@ public with sharing class FlowControlLoopsCollections {
     public static Boolean votingEligibility(Integer age) {
         if(age >= 18){
             return true;
-        }else return false;
+        }else{ 
+        return false;
+        }
     }
 
     /**
@@ -67,8 +69,12 @@ public with sharing class FlowControlLoopsCollections {
             return largestNum = num1;
         } else if (num1 < num2) {
             return largestNum = num2;
-        } else return largestNum;
+        } else {
+        return largestNum;
+        }
+    
     }
+    
 
 
     /**
@@ -87,8 +93,9 @@ public with sharing class FlowControlLoopsCollections {
             return numberType = 'Positive';
         } else if (a < 0) {
             return numberType = 'Negative';
-        } else return null;
-     
+        } else {
+            return null;
+        }
     }
 
     /**
@@ -106,10 +113,11 @@ public with sharing class FlowControlLoopsCollections {
             Integer remainder = Math.mod(a,2);
          if (remainder== 0) {
             return 'Even';
-        } else return 'Odd';
-      }
+        } else {
+         return 'Odd';
+        }    
+        }
     }
-
     /**
      * Question 6
      * Checks if a string is empty, null, or contains text.
@@ -149,8 +157,9 @@ public with sharing class FlowControlLoopsCollections {
             return 'C';
         } else if(score >= 60){
             return 'D';
-        } else return 'F';    
-        
+        } else {
+            return 'F';    
+        }
     }
 
 
@@ -310,8 +319,6 @@ public with sharing class FlowControlLoopsCollections {
             }
         }
             // if the number is negative skip this iteration
-        
-
         return sum; // Replace null with the variable you used to store the result
     }
 
@@ -325,21 +332,16 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static Integer findWordInList(String wordToFind, List<String> words) {
         // The variable to store the index of the word
-        Integer wordIndex = -1;
-        
-        
-
+        Integer wordIndex = -1;  
         // Loop through the list of words
         for(String currentWord : words){
             if (currentWord == wordToFind) {
                 wordIndex = words.indexOf(wordToFind);
                 break;
-            }
-            
+            }   
         }
             // If the current word is the word to find, exit the loop
            return wordIndex;
-    
     }
 
     /**
@@ -369,15 +371,19 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static Map<String, Integer> addItemsToMap() {
         // Initialize an empty Map
-
+        Map<String,Integer> fruitMap = new map<String, Integer>();
         // Add key-value pairs to the Map
         // add Apples => 5
+        fruitMap.put('Apples', 5);
         // add Oranges => 10
+        fruitMap.put('Oranges', 10);
         // add Bananas => 15
+        fruitMap.put('Bananas', 15);
         // add Pears => 20
+        fruitMap.put('Pears', 20);
         // add Grapes => 25
-
-        return null; // Replace null with the variable you used to store the result
+        fruitMap.put('Grapes', 25);
+        return fruitMap; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -391,17 +397,20 @@ public with sharing class FlowControlLoopsCollections {
      */
     public static Integer getSalary(String employeeName) {
         // Initialize a Map
-
+        map<String,Integer> salaryMap = new map<String,Integer>();
         // Add key-value pairs to the Map
         // add John Doe => 50000
+        salaryMap.put('John Doe', 50000);
         // add Jane Smith => 60000
+        salaryMap.put('Jane Smith', 60000);
         // add Sam Brown => 55000
+        salaryMap.put('Sam Brown', 55000);
         // add Alice Johnson => 65000
-
+        salaryMap.put('Alice Johnson', 65000);
         // Get the salary of the employee
-
+        Integer salary = salaryMap.get(employeeName);
         // Return the salary of the employee, or null if the employee is not found in the Map
-        return null; // Replace null with the variable you used to store the result
+        return salary; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -417,21 +426,27 @@ public with sharing class FlowControlLoopsCollections {
     public static List<String> getHighPaidEmployees() {
         // Initialize a Map
         Map<String, Integer> employeeSalaries = new Map<String, Integer>();
-
         // Add key-value pairs to the Map
         // add John Doe => 50000
+        employeeSalaries.put('John Doe', 50000);
         // add Jane Smith => 60000
+        employeeSalaries.put('Jane Smith', 60000);
         // add Sam Brown => 55000
+        employeeSalaries.put('Sam Brown', 55000);
         // add Alice Johnson => 65000
-
-        // Initialize a list to store the names of high paid employees
-
-        // Iterate over the Map using a for loop
+        employeeSalaries.put('Alice Johnson', 65000);
+         // Initialize a list to store the names of high paid employees
+         List<String> highPaidEmployees = new List<String>();
+        // Iterate over the Map using a for loop 
+        for (String currentEmployee : employeeSalaries.keySet()) {
             // Check if the salary of the employee is more than 55000
-                // Add the employee to the list of high paid employees
-
-        // Return the list of high paid employees
-        return null; // Replace null with the variable you used to store the result
+        if (employeeSalaries.get(currentEmployee) > 55000) {
+             // Add the employee to the list of high paid employees
+            highPaidEmployees.add(currentEmployee);
+        }
+        }
+            // Return the list of high paid employees
+            return highPaidEmployees;
+        
     }
-
 }
