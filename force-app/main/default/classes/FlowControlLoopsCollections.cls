@@ -46,11 +46,7 @@ public with sharing class FlowControlLoopsCollections {
      * @return true if the person is eligible to vote, false otherwise.
      */
     public static Boolean votingEligibility(Integer age) {
-        if(age >= 18){
-            return true;
-        }else{ 
-        return false;
-        }
+        return age < 18;
     }
 
     /**
@@ -65,14 +61,12 @@ public with sharing class FlowControlLoopsCollections {
     public static Integer findMax(Integer num1, Integer num2) {
         // Initialize largestNum as null
         Integer largestNum = null;
-        if (num1 == num2 || num1 > num2) {
-            return largestNum = num1;
+        if (num1 >= num2) {
+            largestNum = num1;
         } else if (num1 < num2) {
-            return largestNum = num2;
-        } else {
-        return largestNum;
+            largestNum = num2;
         }
-    
+        return largestNum;
     }
     
 
@@ -86,16 +80,16 @@ public with sharing class FlowControlLoopsCollections {
      * @return A string indicating whether the number is "Positive", "Negative", or "Zero", or null if the number is null.
      */
     public static String checkNumber(Integer a) {
-        String numberType;
-        if (a == 0) {
-            return numberType = 'Zero';
-        } else if (a > 0) {
-            return numberType = 'Positive';
-        } else if (a < 0) {
-            return numberType = 'Negative';
-        } else {
+        if(a == null){
             return null;
         }
+        if (a == 0) {
+            return 'Zero';
+        }
+        if (a > 0) {
+            return 'Positive';
+        }
+        return 'Negative';
     }
 
     /**
@@ -358,7 +352,9 @@ public with sharing class FlowControlLoopsCollections {
         for (Decimal currentCash : moneyInWallet) {
             if (totalCash > 40) {
                 break;
-            }else totalCash += currentCash;
+            }else {
+                totalCash += currentCash;
+            }
         }
         return totalCash; // Replace null with the variable you used to store the result
     }
